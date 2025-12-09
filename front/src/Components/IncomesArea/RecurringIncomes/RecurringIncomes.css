@@ -1,0 +1,42 @@
+.RecurringIncomeList .react-datepicker-popper {
+    margin-top: -330px;
+}
+
+.fa-trash {
+    cursor: pointer !important;
+}
+
+.RecurringIncomes .total-amount {
+    color: green
+}
+
+.inactiveTable {
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    grid-area: 3 / 2 / 3 / 7;
+    font-weight: bold;
+}
+
+.inactiveTable tr,
+.inactiveTable td,
+.inactiveTable th {
+    max-width: 200px;
+}
+
+.inactiveTable th {
+    cursor: pointer;
+    background-color: white;
+}
+
+.inactiveTable input {
+    width: 100%;
+}
+
+
+.tableTitle {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    cursor: default !important;
+}

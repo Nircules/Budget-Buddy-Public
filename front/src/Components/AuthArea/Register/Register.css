@@ -1,0 +1,47 @@
+.Register {
+    margin-top: 80px;
+}
+
+.Register>form {
+    width: 250px;
+    margin: 0 auto;
+}
+
+.Register>h2 {
+    text-align: center;
+}
+
+.Register input,
+.Register button {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.Register span {
+    color: #e65252 !important;
+    /* margin: 0 20px; */
+    /* position: absolute; */
+    /* Will stay exactly where it is. */
+}
+
+.Register .terms-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    flex-direction: row-reverse;
+}
+
+.Register .terms-checkbox label {
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 30px;
+}
+
+.Register .terms-checkbox input[type="checkbox"] {
+    margin-top: 0;
+    position: relative;
+    width: 30px !important;
+    height: 20px !important;
+}

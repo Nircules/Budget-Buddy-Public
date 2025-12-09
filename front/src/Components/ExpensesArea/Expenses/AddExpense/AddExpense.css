@@ -1,0 +1,57 @@
+.AddExpense {
+	max-width: 280px;
+	background: rgba(255, 255, 255, 0.925);
+	backdrop-filter: blur(9px);
+	-webkit-backdrop-filter: blur(9px);
+	border-radius: 10px;
+	z-index: 100;
+}
+
+.AddExpense form {
+	padding-bottom: 10px;
+}
+
+.AddExpense input {
+	width: 100%;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+}
+
+.AddExpense .form-floating>label {
+	left: 20px !important;
+}
+
+.AddExpense .form-check-input {
+	width: 15px;
+	height: 15px;
+}
+
+.AddExpense .card.success {
+	box-shadow: 0 0 50px 1px #7be048;
+	transition: 0.5s ease-in-out;
+}
+
+.react-datepicker__input-container input {
+	text-align: center;
+}
+
+.AddExpense .react-datepicker-popper {
+	margin-top: -20px;
+}
+
+.AddExpense .spanTitle {
+	color: #2290f7;
+}
+
+.AddExpense span {
+	color: #f72222;
+	font-weight: 600;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+	.AddExpense {
+		max-width: 240px;
+	}
+}
+

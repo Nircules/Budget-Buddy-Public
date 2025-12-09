@@ -1,0 +1,14 @@
+.RecurringIncomeList .react-datepicker-popper {
+    margin-top: -330px;
+}
+
+.fa-trash {
+    cursor: pointer !important;
+}
+
+.tableTitle {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    cursor: default !important;
+}

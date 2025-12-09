@@ -1,0 +1,65 @@
+.AddRecurringExpense {
+    max-width: 280px;
+    background: rgba(255, 255, 255, 0.925);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    border-radius: 10px;
+    z-index: 100;
+}
+
+.AddRecurringExpense h3 {
+    color: #2290f7;
+}
+
+.AddRecurringExpense form {
+    padding-bottom: 10px;
+}
+
+.AddRecurringExpense input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.AddRecurringExpense .form-floating>label {
+    left: 20px !important;
+}
+
+.AddRecurringExpense .form-check-input {
+    width: 15px;
+    height: 15px;
+}
+
+.card.success {
+    box-shadow: 0 0 50px 1px #7be048;
+    transition: 0.5s ease-in-out;
+}
+
+.react-datepicker__input-container input {
+    text-align: center;
+}
+
+.AddRecurringExpense .react-datepicker-popper {
+    margin-top: -20px;
+}
+
+.AddRecurringExpense .spanTitle {
+    color: #2290f7;
+}
+
+
+.AddRecurringExpense span {
+    color: #e65252;
+    font-weight: 600;
+}
+
+.AddRecurringExpense .spanTitle {
+    color: #2290f7;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    .AddRecurringExpense {
+        max-width: 240px;
+    }
+}

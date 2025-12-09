@@ -1,0 +1,104 @@
+.RecurringExpenseList .react-datepicker-popper {
+	margin-top: -330px;
+}
+
+.fa-trash {
+	cursor: pointer !important;
+}
+
+.inactiveTable {
+	background: rgba(255, 255, 255, 0);
+	/* Keeps it transparent */
+	backdrop-filter: blur(9px);
+	-webkit-backdrop-filter: blur(9px);
+	grid-area: 3 / 2 / 3 / 7;
+	font-weight: bold;
+	padding: 15px;
+	border-radius: 10px;
+}
+
+.inactiveTable tr,
+.inactiveTable td,
+.inactiveTable th {
+	max-width: 200px;
+}
+
+.inactiveTable th {
+	cursor: pointer;
+	background-color: #38495f !important;
+	color: white;
+}
+
+.inactiveTable th:nth-last-child(-n+2) {
+	cursor: default !important;
+}
+
+.inactiveTable th:not(:nth-last-child(-n+2)):hover {
+	background-color: #293546 !important;
+}
+
+.inactiveTable input {
+	width: 100%;
+}
+
+.inactiveTable>tbody>tr:nth-child(odd) {
+	background-color: #c7d9fc;
+}
+
+.inactiveTable>tbody>tr:nth-child(even) {
+	background-color: #e7f3ff;
+}
+
+.inactiveTable tr:last-child td:first-child {
+	border-bottom-right-radius: 10px;
+}
+
+.inactiveTable tr:last-child td:last-child {
+	border-bottom-left-radius: 10px;
+}
+
+.tableTitle {
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: center;
+	cursor: default !important;
+	background-color: #0e325e !important;
+	color: white;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.RecurringExpenses .fa-caret-down,
+.RecurringExpenses .fa-caret-up {
+	color: #ffffff;
+}
+
+
+.rec-expense-mobile-sort-bar {
+	display: flex;
+	justify-content: space-between;
+	background: #38495f;
+	position: sticky;
+	top: 0;
+	z-index: 10;
+}
+
+
+.rec-expense-mobile-sort-bar button {
+	flex: 1;
+	background: transparent;
+	border: none;
+	font-weight: bold;
+	color: #fff;
+	padding: 0.5rem;
+	cursor: pointer;
+}
+
+.rec-expense-mobile-sort-bar button:hover {
+	background: #ffffff1a;
+}
+
+
+.todayRecExpense {
+	background-color: #fde0ea !important;
+}

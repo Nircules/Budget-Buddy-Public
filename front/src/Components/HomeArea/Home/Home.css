@@ -1,0 +1,12 @@
+.Home .expensesTable {
+    margin: 0 auto;
+}
+
+.recurring-checks {
+    margin-top: 50px;
+}
+
+.Home .rec-expense-swipeable-card {
+    margin: 0 auto;
+    width: 80%;
+}

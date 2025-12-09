@@ -1,0 +1,247 @@
+/* Floating Button */
+.floating-btn {
+    position: fixed;
+    visibility: hidden;
+    /* Ensure button stays fixed on screen */
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgb(6, 87, 163);
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 4px solid white;
+    /* Blending effect with the container */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+
+    transition: background 0.3s ease, transform 0.2s ease, font-size 0.2s ease, bottom 0.2s ease;
+    z-index: 1050;
+}
+
+.floating-btn:hover {
+    background: rgb(2, 55, 104);
+    font-size: 32px;
+    transform: scale(1.1);
+}
+
+/* Blending Adjustment - Move Button Closer to Container */
+.floating-btn.open {
+    bottom: 10px;
+}
+
+/* Plus to X Animation */
+.floating-btn span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+    transition-timing-function: cubic-bezier(0.41, 0.45, 0.1, 0.86);
+    font-family: Arial, sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+.floating-btn.open span {
+    transform: rotate(225deg);
+    opacity: 1;
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+}
+
+.floating-btn span::before {
+    content: '+';
+    font-size: 48px;
+    font-family: Arial, sans-serif;
+}
+
+.floating-btn.open span::before {
+    font-size: 56px;
+}
+
+
+/* Overlay for Fullscreen Effect */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 999;
+}
+
+.overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Expandable Add Transaction Container */
+.add-section-container {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    max-width: 480px;
+    height: 670px;
+    background: white;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    /* padding: 15px; */
+    transform: scale(0.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1025;
+}
+
+.add-section-container.open {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+    justify-items: center;
+}
+
+.add-section-inner {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Toggle Buttons - Styled as Grid Layout */
+.toggle-buttons {
+    display: block;
+    background-color: rgba(70, 120, 154, 0.664);
+    border-bottom: 3px solid black;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.toggle-btn {
+    padding: 10px;
+    border: none;
+    width: 121px;
+    color: white;
+    cursor: pointer;
+    background: transparent;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.toggle-btn:hover {
+    background: rgba(70, 120, 154, 0.664);
+}
+
+.toggle-btn.selected {
+    background-color: rgba(70, 120, 154, 0.664);
+}
+
+/* Form Inputs */
+.transaction-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: blue;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background: darkblue;
+    transform: scale(1.05);
+}
+
+/* Mobile-Friendly Adjustments */
+@media (max-width: 1000px) {
+    .floating-btn {
+        visibility: visible;
+    }
+
+    .add-section-container {
+        height: 670px;
+    }
+
+    .toggle-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+
+    .add-section-container {
+        /* width: 80%; */
+        height: 670px;
+    }
+
+    .transaction-form input {
+        font-size: 18px;
+    }
+
+    .submit-btn {
+        font-size: 18px;
+        padding: 10px;
+    }
+}
+
+@media (max-height: 700px) {
+    .add-section-container {
+        transform: scale(0.8) !important;
+        position: fixed;
+        bottom: -50px;
+        right: 0;
+    }
+
+}
+
+@media (max-height: 600px) {
+    .add-section-container {
+        transform: scale(0.7) !important;
+        bottom: -90px;
+        right: 0;
+    }
+}
+
+@media (max-height: 500px) {
+    .add-section-container {
+        transform: scale(0.6) !important;
+        bottom: -120px;
+        right: 0;
+    }
+}
+
+@media (max-height: 400px) {
+    .add-section-container {
+        transform: scale(0.5) !important;
+        bottom: -140px;
+        right: 0;
+    }
+}

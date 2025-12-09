@@ -1,0 +1,60 @@
+.AddRecurringIncome {
+    max-width: 280px;
+    background: rgba(255, 255, 255, 0.925);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    border-radius: 10px;
+    z-index: 100;
+}
+
+.AddRecurringIncome form {
+    padding-bottom: 10px;
+}
+
+.AddRecurringIncome h3 {
+    color: #2290f7;
+}
+
+.AddRecurringIncome input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.AddRecurringIncome .form-floating>label {
+    left: 20px !important;
+}
+
+.AddRecurringIncome .form-check-input {
+    width: 15px;
+    height: 15px;
+}
+
+.AddRecurringIncome .card.success {
+    box-shadow: 0 0 50px 1px #7be048;
+    transition: 0.5s ease-in-out;
+}
+
+.react-datepicker__input-container input {
+    text-align: center;
+}
+
+.AddRecurringIncome .react-datepicker-popper {
+    margin-top: -20px;
+}
+
+.AddRecurringIncome .spanTitle {
+    color: #2290f7;
+}
+
+.AddRecurringIncome span {
+    color: #f72222;
+    font-weight: 600;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    .AddRecurringIncome {
+        max-width: 240px;
+    }
+}

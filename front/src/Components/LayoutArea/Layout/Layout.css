@@ -1,0 +1,23 @@
+.Layout {
+	direction: rtl;
+	min-height: 100%;
+}
+
+.Layout>header {
+	grid-column: span 6;
+	border-top: none;
+	border-bottom: none;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	z-index: 999;
+}
+
+.Layout>main {
+	grid-column: span 6;
+	padding-top: 120px;
+	padding: 120px 15px 0px 15px;
+	height: 100%;
+}
+
+/* .Layout>* {
+    border: 1px solid #7e9af7;
+} */

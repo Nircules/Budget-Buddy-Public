@@ -1,0 +1,114 @@
+.welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.welcome-modal {
+    background-color: white;
+    border-radius: 12px;
+    padding: 40px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    text-align: right;
+    direction: rtl;
+    animation: slideUp 0.4s ease-out;
+}
+
+.welcome-title {
+    color: #2290f7;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.welcome-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.welcome-intro {
+    margin-bottom: 15px;
+}
+
+.welcome-tips {
+    background-color: #f5f7fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-right: 4px solid #2290f7;
+}
+
+.tips-header {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #2290f7;
+}
+
+.welcome-tips ul {
+    padding-right: 20px;
+    margin: 0;
+}
+
+.welcome-footer {
+    font-size: 0.95rem;
+    color: #666;
+    font-style: italic;
+}
+
+.welcome-button {
+    background-image: radial-gradient(100% 100% at 100% 0,
+            #a2c7ff 0,
+            #659ff7 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.2s;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+        rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+        rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+}
+
+.welcome-button:hover {
+    background-image: radial-gradient(100% 100% at 100% 0,
+            #659ff7 0,
+            #2290f7 100%);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

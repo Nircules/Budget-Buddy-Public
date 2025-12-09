@@ -1,0 +1,18 @@
+export const doughnutColors = {
+	red: "#ffb3b3",
+	lightRed: "#ffe6e4ff",
+	hoverRed: "#fba3a3ff",
+	hoverLightRed: "#ffd2ceff",
+	red2: "#ffe0ddff",
+	lightRed2: "#fef3f3ff",
+	hoverRed2: "#fedbd8ff",
+	hoverLightRed2: "#ffe3e3ff",
+	blue: "#5088aeff",
+	lightBlue: "#80cbfaff",
+	hoverBlue: "#46789aff",
+	hoverLightBlue: "#77beeaff",
+	blue2: "#b2d6ecff",
+	lightBlue2: "#c7eaffff",
+	hoverBlue2: "#a4cde7ff",
+	hoverLightBlue2: "#d6efffff",
+};

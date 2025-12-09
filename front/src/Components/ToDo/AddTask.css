@@ -1,0 +1,103 @@
+/* Ensure the container of the textarea is positioned relatively */
+.textarea {
+    position: relative;
+    height: 125px !important;
+    width: 400px;
+}
+
+.textarea textarea {
+    padding-top: 30px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+}
+
+/* Set the initial position of the textarea label to be above the textarea */
+.card-header label {
+    left: 0;
+    top: -5px;
+    /* Position the label above the textarea initially */
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: initial !important;
+    color: #ffffff; 
+    pointer-events: none;
+    transition: all 0.3s ease;
+    background-color: #03752500;
+}
+
+.card-header {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity));
+}
+
+/* Move the label when the textarea is focused or contains text */
+.textarea textarea:focus~label,
+.textarea textarea:valid~label {
+    transform: translateY(0);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.AddTask .button-29 {
+    width: 100% !important;
+}
+
+@media (max-width: 600px) {
+    .textarea {
+        width: 312px;
+    }
+}
+
+form .form-row .textarea {
+    height: 70px;
+}
+
+
+.textarea textarea {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+}
+
+.larger {
+    width: 50px !important;
+    height: 40px !important;
+}
+
+.textarea textarea:focus~label,
+.textarea textarea:valid~label {
+    transform: translateY(-20px);
+    font-size: 16px;
+    font-weight: 600;
+    color: #037525;
+}
+
+.textarea textarea {
+    resize: none;
+    padding-top: 10px;
+}
+
+.textarea label {
+    width: 100%;
+    bottom: 40px;
+    background: #fff;
+}
+
+.textarea textarea:focus~.underline:before,
+.textarea textarea:valid~.underline:before {
+    transform: scale(1);
+}
+
+.AddTask form {
+    margin: initial;
+	width: initial !important;
+	max-width: none !important;
+}

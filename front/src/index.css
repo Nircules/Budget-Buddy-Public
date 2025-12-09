@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital@1&family=Karantina&family=Poppins:wght@300&display=swap");
+
+html,
+body,
+#root {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	text-align: center;
+	color: black;
+	font-family: "Cabin", sans-serif;
+	font-family: "Karantina", cursive;
+	font-family: "Poppins", sans-serif;
+	/* overflow: hidden; */
+	background-color: #b8dbff;
+	background-image: url("./Assets/Images/BudgetbuddyBG.png");
+	background-size: cover;
+	/* Ensures the image covers the entire screen */
+	background-position: center;
+	/* Centers the image */
+	background-repeat: no-repeat;
+	/* Prevents the image from repeating */
+	background-attachment: fixed;
+	/* Keeps the image fixed on scroll */
+}
+
+.form-control {
+	background-color: #fff;
+	font-size: 18px;
+	font-weight: 600;
+	padding: 10px;
+	margin-bottom: 10px;
+	transition: 0.3s ease-in-out;
+	border: 1px solid #000000;
+	direction: ltr;
+}
+
+label {
+	color: #2290f7;
+	font-weight: 600;
+	margin-bottom: 10px;
+	transition: 0.3s ease-in-out;
+}
+
+.Box {
+	display: inline-block;
+	border: 1px solid black;
+	border-radius: 10px;
+	box-shadow: 1px 2px 28px 0px rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: 1px 2px 28px 0px rgba(0, 0, 0, 0.75);
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0.937);
+	width: 90%;
+	transition: 0.3s ease-in-out;
+	padding-bottom: 50px;
+}
+
+.Box>p {
+	margin: 0;
+}
+
+a {
+	color: rgb(93, 157, 252);
+}
+
+a:hover {
+	color: #408af8;
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	background-color: #c7c7c7;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	background-color: #949494;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgb(90, 163, 255);
+	background: linear-gradient(0deg,
+			rgb(90, 134, 255) 0%,
+			rgb(45, 154, 255) 100%);
+}
+
+.button-29 {
+	align-items: center;
+	appearance: none;
+	background-image: radial-gradient(100% 100% at 100% 0,
+			#a2c7ff 0,
+			#659ff7 100%);
+	border: 0;
+	box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+		rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+		rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+	box-sizing: border-box;
+	color: #fff;
+	cursor: pointer;
+	display: inline-flex;
+	height: 50px;
+	justify-content: center;
+	padding-left: 16px;
+	padding-right: 16px;
+	transition: box-shadow 0.15s, transform 0.15s;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	will-change: box-shadow, transform;
+	font-size: 18px;
+	transform: translateY(-2px);
+}
+
+.button-29:hover {
+	box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+		rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #a2c7ff 0 -3px 0 inset;
+	transform: translateY(-4px);
+	color: #ffffff;
+}
+
+form {
+	margin: 0 auto;
+	width: 75% !important;
+	max-width: 300px;
+}
+
+.form-floating>label {
+	top: -10px;
+	left: 40px;
+	font-size: 20px;
+}
+
+input {
+	direction: rtl !important;
+}
+
+/* Styles for autofilled input boxes */
+.form-floating :-webkit-autofill::first-line {
+	color: #000000;
+	/* Text color when autofilled */
+}
+
+.fa-info-circle {
+	color: #4982b8;
+	cursor: pointer;
+}
+
+.fa-info-circle:hover {
+	color: #3e71a1;
+}
+
+select {
+	direction: rtl !important;
+	text-align: center !important;
+	border: 1px solid #ccc !important;
+}
+
+.add-category-button {
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: #2290f7;
+	border: 1px solid #cddff0;
+	border-radius: 20px;
+	cursor: pointer;
+	font-size: 24px;
+	font-weight: bold;
+	color: #ffffff;
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-category-button:hover {
+	background-color: #2290f7;
+	color: #ffffff;
+	transform: translateY(-50%) scale(1.1);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

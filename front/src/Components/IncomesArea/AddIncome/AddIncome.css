@@ -1,0 +1,57 @@
+.AddIncome {
+    max-width: 280px;
+    background: rgba(255, 255, 255, 0.925);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    border-radius: 10px;
+    z-index: 100;
+}
+
+.AddIncome form {
+    padding-bottom: 10px;
+}
+
+
+.AddIncome span {
+    color: #f72222;
+    font-weight: 600;
+}
+
+.AddIncome .spanTitle {
+    color: #2290f7;
+}
+
+.AddIncome input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.AddIncome .form-floating>label {
+    left: 20px !important;
+}
+
+.AddIncome .form-check-input {
+    width: 15px;
+    height: 15px;
+}
+
+.AddIncome .card.success {
+    box-shadow: 0 0 50px 1px #7be048;
+    transition: 0.5s ease-in-out;
+}
+
+.AddIncome .react-datepicker__input-container input {
+    text-align: center;
+}
+
+.AddIncome .react-datepicker-popper {
+    margin-top: -20px;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    .AddIncome {
+        max-width: 240px;
+    }
+}

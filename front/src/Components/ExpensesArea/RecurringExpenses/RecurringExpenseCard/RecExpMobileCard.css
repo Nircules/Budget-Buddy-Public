@@ -1,0 +1,117 @@
+.rec-expense-list {
+    margin-bottom: 1rem;
+}
+
+:root {
+    /* at smallest: 60px; ideal: 20% of parent; max: 120px */
+    --action-width: clamp(60px, 20%, 60px);
+}
+
+/* ─── CONTAINER ───────────────────────────────────────────────── */
+.rec-expense-swipeable-card {
+    position: relative;
+    overflow: hidden;
+    margin: 0.0rem 0;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    height: 80px;
+}
+
+
+/* ─── ACTIONS BEHIND ──────────────────────────────────────────── */
+.rec-expense-card-actions {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: var(--action-width);
+    background: #ffd8d8;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    height: 80px;
+
+}
+
+/* ─── FRONT PANEL ────────────────────────────────────────────── */
+.rec-expense-card-front {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    padding-left: 2rem;
+    background: #fff;
+    border-bottom: 1px solid #5ed0fd;
+    transition: transform 0.2s ease-out;
+    height: 80px;
+}
+
+
+.rec-expense-description {
+    flex: 1 1 auto;
+    /* Allow the description to grow and shrink */
+    text-align: right;
+    font-weight: bold;
+}
+
+.rec-expense-bottom-row {
+    align-items: center;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    font-size: 15px;
+    color: gray;
+}
+
+.rec-expense-amount {
+    flex: 0 0 20%;
+    text-align: left;
+    font-weight: bold;
+    color: #e65252
+}
+
+.fa-trash-alt {
+    width: 100%;
+    font-size: 20px;
+}
+
+.fa-trash-alt:hover {
+    color: rgb(163, 0, 0);
+    cursor: pointer;
+}
+
+.fa-info-circle {
+    font-size: 20px;
+}
+
+
+/* 1) Base styling for the hint */
+.rec-expense-swipe-indicator {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    font-size: 1.25rem;
+    color: rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    transition: transform 0.2s ease;
+    animation: swipePulse 1.2s ease-in-out infinite;
+}
+
+.rec-expense-swipeable-card.open .rec-expense-swipe-indicator {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+
+/* 4) Only show on small screens, if you like */
+@media (min-width: 1000px) {
+    .rec-expense-swipe-indicator {
+        display: none;
+    }
+}
+
+.todayRecExpense {
+    background-color: #fde0ea !important;
+}

@@ -1,0 +1,50 @@
+.ToDo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+
+.ToDo .button-29 {
+    height: 30px;
+    width: 100%;
+}
+
+.tasks {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    /* Show up to 7 columns on larger screens */
+    gap: 20px;
+    /* Space between grid items */
+    padding: 10px;
+}
+
+/* For responsiveness, add media queries */
+@media (max-width: 1200px) {
+    .tasks {
+        grid-template-columns: repeat(5, 1fr);
+        /* 5 columns on medium screens */
+    }
+}
+
+@media (max-width: 900px) {
+    .tasks {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 columns on small screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .tasks {
+        grid-template-columns: repeat(1, 1fr);
+        /* 1 column on very small screens */
+    }
+}
+
+.card-body h5 {
+    white-space: pre-wrap;
+}

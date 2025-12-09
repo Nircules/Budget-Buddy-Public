@@ -1,0 +1,57 @@
+.MenuComponent {
+    display: flex;
+    height: 100%;
+}
+
+.css-dip3t8 {
+    width: 100%;
+}
+
+.SideBar {
+    width: 100%;
+}
+
+/* The Side Bar */
+.ps-sidebar-root {
+    width: 100%;
+    font-size: 150%;
+    background: linear-gradient(90deg, rgb(145, 152, 255) 0%, rgb(177, 182, 253) 20%, rgb(251, 223, 255) 50%, rgb(177, 182, 253) 80%, rgb(145, 152, 255) 100%);
+}
+
+hr {
+    border-top: 5px solid #947ef7 !important;
+}
+
+/* Category  */
+#CategoryLabel {
+    text-align: center;
+    color: white;
+}
+
+#SubCatLabel {
+    background-color: white;
+}
+
+/* The dropdown box of each line */
+.ps-submenu-content {
+    border: 2px solid #7e9af7;
+    background: rgb(220, 157, 255);
+    background: linear-gradient(90deg, rgb(145, 152, 255) 0%, rgb(177, 182, 253) 20%, rgb(177, 182, 253) 80%, rgb(145, 152, 255) 100%);
+
+}
+
+.ps-menuitem-root {
+    color: #0011ff;
+}
+
+/* Each line in the side bar */
+.ps-menu-button:hover {
+    background: linear-gradient(90deg, rgb(145, 152, 255) 0%, rgb(177, 182, 253) 20%, rgb(177, 182, 253) 80%, rgb(145, 152, 255) 100%);
+    color: white !important;
+    font-weight: bold !important;
+}
+
+.ps-submenu-expand-icon {
+    align-self: center;
+    margin-bottom: auto;
+}

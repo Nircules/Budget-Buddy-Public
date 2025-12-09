@@ -1,0 +1,419 @@
+.Expenses,
+.RecurringExpenses {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-gap: 10px;
+}
+
+.Expenses>.add-expense,
+.RecurringExpenses>.add-expense {
+	grid-area: 1/ 1 / 4 / 1;
+	z-index: 99;
+}
+
+.tables-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	/* Allow tables to wrap if they don't fit */
+	gap: 1rem;
+	/* Space between tables */
+	justify-content: flex-start;
+	/* Align tables to the start (left) */
+	align-items: flex-start;
+	/* Align the tops of the tables */
+}
+
+.table-container {
+	flex: 1 1 auto;
+	/* Allow the table to shrink and grow */
+	max-width: 100%;
+	/* Ensure table doesn't exceed the container's width */
+	overflow-x: auto;
+	/* Allow horizontal scrolling if needed */
+	min-width: 300px;
+	/* Prevent the table from getting too small */
+	box-sizing: border-box;
+	/* Include padding and borders in width */
+	margin-bottom: 1.5rem;
+	/* Spacing at the bottom */
+}
+
+
+.rightCol>.button-29,
+.leftCol>.button-29 {
+	height: auto;
+	min-height: 75px;
+}
+
+/* .Expenses>th,
+td {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+} */
+
+.Expenses>table,
+.RecurringExpenses>table {
+	border-spacing: 10px;
+	border-radius: 10px;
+}
+
+.expensesTable {
+	background: rgba(255, 255, 255, 0.937);
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+	backdrop-filter: blur(9px);
+	-webkit-backdrop-filter: blur(9px);
+	grid-area: 2 / 2 / 2 / 7;
+	font-weight: bold;
+	padding: 15px;
+	border-radius: 10px;
+}
+
+.expensesTable th:first-child {
+	border-top-right-radius: 10px;
+}
+
+.expensesTable th:last-child {
+	border-top-left-radius: 10px;
+}
+
+.expensesTable tr:last-child td:first-child {
+	border-bottom-right-radius: 10px;
+}
+
+.expensesTable tr:last-child td:last-child {
+	border-bottom-left-radius: 10px;
+}
+
+.expensesTable tr,
+.expensesTable td,
+.expensesTable th {
+	max-width: 200px;
+}
+
+.expensesTable th {
+	cursor: pointer;
+	background-color: #38495f;
+	color: white;
+}
+
+.expensesTable th:nth-last-child(-n+2) {
+	cursor: default !important;
+}
+
+.expensesTable th:not(:nth-last-child(-n+2)):hover {
+	background-color: #293546;
+}
+
+.expensesTable input {
+	width: 100%;
+}
+
+.Expenses .total-amount,
+.RecurringExpenses .total-amount {
+	color: #e65252;
+	font-size: 30px;
+	padding-bottom: 10px;
+}
+
+.expensesTable>tbody>tr:nth-child(odd) {
+	background-color: #ffffff;
+}
+
+.expensesTable>tbody>tr:nth-child(even) {
+	background-color: #d8e8ff;
+}
+
+.expensesTable>tbody>tr:nth-child(odd):hover {
+	background-color: #ffffff;
+}
+
+.expensesTable>tbody>tr:nth-child(even):hover {
+	background-color: #bed9ff;
+}
+
+.gridIcon {
+	font-size: 25px;
+	margin-right: 10px;
+	cursor: pointer;
+	font-size: 30px;
+	color: #666;
+}
+
+.gridIcon:hover {
+	color: #bed9ff;
+	text-shadow: 0 0 3px #bed9ff;
+}
+
+.smallCol {
+	width: 50px;
+}
+
+.ExpenseCardList .react-datepicker-popper {
+	margin-top: -330px;
+}
+
+.Expenses .fa-caret-down,
+.Expenses .fa-caret-up {
+	color: #ffffff;
+}
+
+.fa-arrow-alt-circle-up {
+	cursor: pointer;
+}
+
+.fa-arrow-alt-circle-up:hover {
+	color: #2c323a91;
+}
+
+@media (max-width: 1000px) {
+	.rec-expense-mobile-sort-bar {
+		display: flex;
+		justify-content: space-between;
+		background: #38495f;
+		position: sticky;
+		z-index: 10;
+	}
+
+	.rec-expense-mobile-sort-bar button {
+		flex: 1;
+		background: transparent;
+		border: none;
+		font-weight: bold;
+		color: #fff;
+		padding: 0.5rem;
+		cursor: pointer;
+	}
+
+	.rec-expense-mobile-sort-bar button:hover {
+		background: #ffffff1a;
+	}
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 1000px) {
+
+	.Expenses,
+	.RecurringExpenses {
+		display: block;
+	}
+
+	.Expenses>.add-expense,
+	.RecurringExpenses>.add-expense {
+		display: none;
+	}
+
+	.expensesTable {
+		grid-area: auto;
+		grid-column: 1 / -1;
+		width: 98%;
+		margin: 10px;
+		text-align: center;
+		/* Center text if needed */
+	}
+}
+
+@media (max-width: 480px) {
+
+	.Expenses,
+	.RecurringExpenses {
+		grid-template-columns: 1fr;
+		/* Stack in one column */
+	}
+
+	.Expenses>.add-expense,
+	.RecurringExpenses>.add-expense {
+		grid-area: auto;
+		/* Ensure proper flow */
+	}
+
+	.expensesTable {
+		padding: 10px;
+		/* Reduce padding for smaller screens */
+		box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.2);
+		/* Softer shadow */
+		font-size: 14px;
+		/* Adjust font size if needed */
+	}
+
+}
+
+/* Container with styling previously on the table */
+.titleContainer {
+	grid-area: 1 / 2 / 1 / 7;
+	background: rgba(255, 255, 255, 0.937);
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+	backdrop-filter: blur(9px);
+	-webkit-backdrop-filter: blur(9px);
+	border-radius: 10px;
+	padding: 10px;
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	/* Allows wrapping on smaller screens */
+	gap: 10px;
+}
+
+/* Each section inside */
+.titleSection {
+	flex: 1 1 30%;
+	text-align: center;
+}
+
+/* You can keep these if needed */
+.rightCol {
+	text-align: right;
+}
+
+.leftCol {
+	text-align: left;
+}
+
+.middleCol {
+	text-align: center;
+	font-size: 30px;
+}
+
+.Expenses>.titleContainer,
+.RecurringExpenses>.titleContainer {
+	grid-area: 1 / 2 / 1 / 7;
+	background: rgba(255, 255, 255, 0.937);
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+	backdrop-filter: blur(9px);
+	-webkit-backdrop-filter: blur(9px);
+	border-radius: 10px;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	/* allows items to wrap on narrow screens */
+	gap: 8px;
+	/* spacing between items */
+}
+
+/* each “cell” */
+.titleItem {
+	flex: 1 1 30%;
+	/* base width 30%, can shrink or grow */
+	min-width: 120px;
+	/* prevent items from collapsing too small */
+	text-align: center;
+}
+
+/* override alignments if you like */
+.rightCol {
+	text-align: right;
+}
+
+.leftCol {
+	text-align: left;
+}
+
+.middleCol {
+	text-align: center;
+}
+
+/* tweak the month label if you want it smaller or stacked */
+.month-label {
+	font-weight: bold;
+	margin-bottom: 4px;
+}
+
+.smallScreenButton {
+	display: none !important;
+}
+
+/* stack vertically */
+@media (max-width: 677px) {
+	.titleContainer {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.titleItem {
+		flex: none;
+		width: 100%;
+	}
+
+	.rightCol,
+	.leftCol,
+	.middleCol {
+		text-align: center;
+	}
+
+	.rightCol>.button-29 {
+		display: none;
+	}
+
+	.leftCol>.button-29 {
+		height: 20px !important;
+	}
+
+	.smallScreenButton {
+		display: inline-flex !important;
+		margin-left: 50px;
+	}
+}
+
+/* Adjust table data when screen is small */
+@media (max-width: 800px) {
+
+	.amountCol {
+		min-width: 150px !important;
+	}
+
+	.orderDescription,
+	.pickupDate,
+	.amountCol,
+	.customerName {
+		display: none;
+	}
+
+	/* tr {
+        display: flex;
+        justify-content: space-between;
+    } */
+}
+
+
+.mobile-sort-bar {
+	display: flex;
+	justify-content: space-between;
+	background: #38495f;
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	margin-top: 1rem;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+}
+
+.mobile-sort-bar button {
+	flex: 1;
+	background: transparent;
+	border: none;
+	font-weight: bold;
+	color: #fff;
+	padding: 0.5rem;
+	cursor: pointer;
+
+}
+
+.mobile-sort-bar button:hover {
+	background: #ffffff1a;
+}
+
+.rec-expense-headTitle {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: white;
+	background-color: #38495f;
+	text-align: center;
+	border-bottom: 1px solid #38495f;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+}

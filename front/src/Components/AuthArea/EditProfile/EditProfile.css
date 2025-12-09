@@ -1,0 +1,174 @@
+.EditProfile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    /* Add padding for better spacing on smaller screens */
+}
+
+.eBox {
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 1px 2px 28px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 2px 28px 0px rgba(0, 0, 0, 0.75);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.937);
+    width: 90%;
+    /* Ensure it adjusts to smaller screens */
+    max-width: 400px;
+    /* Add a max-width for larger screens */
+    transition: 0.3s ease-in-out;
+    padding: 20px;
+    /* Reduce padding for better fit */
+    margin: 10px 0;
+    /* Add margin for spacing */
+}
+
+.EditProfile>form {
+    width: 100%;
+    /* Adjust to full width of container */
+    align-items: center;
+    text-align: center;
+}
+
+.EditProfile span {
+    color: #e65252;
+}
+
+form .form-row .input-data,
+form .form-row .input-checkbox {
+    width: 100%;
+    height: 40px;
+    margin: 0 20px;
+    position: relative;
+}
+
+.select-style {
+    display: block;
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    border-bottom: 2px solid #2290f7;
+    position: relative;
+    z-index: 1;
+}
+
+.select-style:focus~label,
+.select-style:valid~label {
+    transform: translateY(-20px);
+    font-size: 16px;
+    font-weight: 600;
+    color: #2290f7;
+    z-index: 2;
+}
+
+.select-style label {
+    position: absolute;
+    width: 100%;
+    pointer-events: none;
+    left: 0;
+    bottom: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.select-style option {
+    text-align: center;
+    font-size: 20px;
+}
+
+.input-data label {
+    position: absolute;
+    width: 100%;
+    pointer-events: none;
+    left: 0;
+    bottom: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.input-data input:focus~label,
+.input-data input:valid~label {
+    transform: translateY(-20px);
+    font-size: 16px;
+    font-weight: 600;
+    color: #037525;
+}
+
+.EditProfile .form-row {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .EditProfile {
+        padding: 10px;
+    }
+
+    .eBox {
+        width: 95%;
+        /* Adjust to almost full screen width */
+        padding: 15px;
+    }
+
+    .EditProfile select {
+        width: 90%;
+        /* Dropdown takes up more space on small screens */
+    }
+
+    .EditProfile table {
+        font-size: 10px;
+        /* Further adjust font size for very small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .EditProfile {
+        padding: 5px;
+    }
+
+    .eBox {
+        width: 100%;
+        /* Adjust to full screen width */
+        padding: 8px;
+    }
+
+    .EditProfile select {
+        width: 100%;
+        /* Dropdown takes up full width */
+    }
+
+    .EditProfile table {
+        font-size: 8px;
+        /* Further adjust font size for very small screens */
+    }
+}
+
+/* Welcome Overlay Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

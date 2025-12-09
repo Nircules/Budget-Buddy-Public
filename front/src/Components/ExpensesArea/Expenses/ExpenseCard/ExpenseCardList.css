@@ -1,0 +1,125 @@
+.amountCol {
+    color: #e65252;
+}
+
+.fa-edit {
+    cursor: pointer;
+}
+
+input {
+    text-align: center;
+}
+
+.fa-trash-alt {
+    cursor: pointer;
+    color: #e65252;
+}
+
+.expense-table {
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: "Segoe UI", sans-serif;
+    color: #333;
+}
+
+/* desktop: grid table layout */
+.expense-header,
+.expense-row {
+    display: grid;
+    grid-template-columns: 1.2fr 3fr 1fr 1fr 0.8fr;
+    align-items: center;
+    padding: 0.75em 1em;
+}
+
+.expense-header {
+    background: #f0f4f8;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+}
+
+.expense-row {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.expense-row:nth-of-type(even) {
+    background: #fafafa;
+}
+
+.expense-row:last-of-type {
+    border-bottom: none;
+    border-radius: 0 0 8px 8px;
+}
+
+.expense-row:hover {
+    background: #f0f4f8;
+}
+
+
+@media (max-width: 640px) {
+
+    /* hide the old table entirely */
+    .expense-table,
+    .expense-header {
+        display: none;
+    }
+
+    /* card container */
+    .expense-card {
+        background: #fff;
+        margin: 0.75rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        transition: transform .2s;
+    }
+
+    .expense-card:hover {
+        transform: translateY(-2px);
+    }
+
+    /* header: description + date */
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 0.75rem 1rem;
+        background: #f0f4f8;
+    }
+
+    .card-header .description {
+        flex: 1;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.2;
+    }
+
+    .card-header .date {
+        font-size: 0.85rem;
+        color: #555;
+        margin-left: 0.5rem;
+        white-space: nowrap;
+    }
+
+    /* body: amount + category */
+    .card-body {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+        border-top: 1px solid #e2e8f0;
+    }
+
+    .card-body .amount,
+    .card-body .category {
+        font-size: 0.9rem;
+        color: #333;
+    }
+
+    /* actions: icons aligned right */
+    .card-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        border-top: 1px solid #e2e8f0;
+    }
+}

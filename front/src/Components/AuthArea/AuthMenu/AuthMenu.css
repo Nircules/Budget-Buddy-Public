@@ -1,0 +1,14 @@
+.AuthMenu a {
+    text-decoration: none;
+    width: 100px;
+    margin: 5px;
+}
+
+.fa-user-circle {
+    font-size: 250%;
+    color: #000;
+}
+
+.fa-user-circle:hover {
+    color: #7a7a7a;
+}
