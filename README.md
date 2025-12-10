@@ -16,10 +16,11 @@ A full-stack web application for personal finance management with features for t
 
 ### Backend
 
--   **Django** - Python web framework
+-   **Django 5.1** - Python web framework
 -   **Django REST Framework** - API development
 -   **JWT Authentication** - Simple JWT for token-based auth
--   **PostgreSQL/SQLite** - Database (configurable)
+-   **SQLite** - Database (local development)
+-   **APScheduler** - Task scheduling for recurring transactions
 
 ### Frontend
 
@@ -45,11 +46,20 @@ A full-stack web application for personal finance management with features for t
 cd backend
 ```
 
-2. Create a virtual environment:
+2. Create and activate a virtual environment:
+
+**Windows (PowerShell):**
+
+```powershell
+python -m venv myenv
+.\myenv\Scripts\Activate.ps1
+```
+
+**macOS/Linux:**
 
 ```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+python -m venv myenv
+source myenv/bin/activate
 ```
 
 3. Install dependencies:
@@ -58,37 +68,28 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-4. Set up environment variables:
-   Create a `.env` file in the backend directory:
-
-```env
-DJANGO_SECRET_KEY=your-secret-key-here
-DEBUG=True
-DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1
-DATABASE_URL=sqlite:///db.sqlite3  # or your PostgreSQL URL
-CORS_ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
-CSRF_TRUSTED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
-```
-
-5. Run migrations:
+4. Create database tables (run migrations):
 
 ```bash
+python manage.py makemigrations base
 python manage.py migrate
 ```
 
-6. Create a superuser (optional):
+5. Create a superuser (optional, for admin access):
 
 ```bash
 python manage.py createsuperuser
 ```
 
-7. Start the development server:
+6. Start the development server:
 
 ```bash
 python manage.py runserver
 ```
 
 The API will be available at `http://localhost:8000/`
+
+**Note:** No `.env` file is required for local development. All settings are pre-configured in `settings.py`.
 
 ### Frontend Setup
 
@@ -104,13 +105,7 @@ cd front
 npm install
 ```
 
-3. Create a `.env` file in the front directory:
-
-```env
-REACT_APP_API_URL=http://localhost:8000/
-```
-
-4. Start the development server:
+3. Start the development server:
 
 ```bash
 npm start
@@ -118,13 +113,23 @@ npm start
 
 The application will open at `http://localhost:3000/`
 
-## 📚 API Documentation
+**Note:** The frontend is configured to connect to `http://localhost:8000/` by default. No `.env` file is needed.
+
+## 📚 API Endpoints
 
 ### Authentication
 
 -   `POST /accounts/token/` - Login and get JWT tokens
 -   `POST /accounts/token/refresh/` - Refresh access token
 -   `POST /register/` - Register new user
+
+### User Management
+
+-   `GET /users/` - Get current user details
+-   `GET /users/{id}/` - Get user by ID
+-   `GET /user_profile/` - Get user profile
+-   `POST /check_email/` - Check email availability
+-   `POST /check_username/` - Check username availability
 
 ### Expenses
 
@@ -133,12 +138,26 @@ The application will open at `http://localhost:3000/`
 -   `PUT /expenses/{id}/` - Update expense
 -   `DELETE /expenses/{id}/` - Delete expense
 
+### Recurring Expenses
+
+-   `GET /recurring_expenses/` - List recurring expenses
+-   `POST /recurring_expenses/` - Create recurring expense
+-   `PUT /recurring_expenses/{id}/` - Update recurring expense
+-   `DELETE /recurring_expenses/{id}/` - Delete recurring expense
+
 ### Incomes
 
 -   `GET /incomes/` - List all incomes
 -   `POST /incomes/` - Create new income
 -   `PUT /incomes/{id}/` - Update income
 -   `DELETE /incomes/{id}/` - Delete income
+
+### Recurring Incomes
+
+-   `GET /recurring_incomes/` - List recurring incomes
+-   `POST /recurring_incomes/` - Create recurring income
+-   `PUT /recurring_incomes/{id}/` - Update recurring income
+-   `DELETE /recurring_incomes/{id}/` - Delete recurring income
 
 ### Budgets
 
@@ -147,24 +166,56 @@ The application will open at `http://localhost:3000/`
 -   `PUT /budgets/{id}/` - Update budget
 -   `DELETE /budgets/{id}/` - Delete budget
 
-## 🔒 Security Notes
+### Categories
 
--   Never commit `.env` files or `db.sqlite3` to version control
--   Always use environment variables for sensitive data
--   Change the `DJANGO_SECRET_KEY` in production
--   Use HTTPS in production
--   Set `DEBUG=False` in production
+-   `GET /categories/` - List user categories
+-   `POST /categories/` - Create new category
+-   `PUT /categories/{id}/` - Update category
+-   `DELETE /categories/{id}/` - Delete category
 
-## 🚀 Deployment
+### Tasks (To-Do)
 
-For production deployment:
+-   `GET /tasks/` - List all tasks
+-   `POST /tasks/` - Create new task
+-   `PUT /tasks/{id}/` - Update task
+-   `DELETE /tasks/{id}/` - Delete task
 
-1. Set environment variables on your hosting platform
-2. Use a production database (PostgreSQL recommended)
-3. Configure `ALLOWED_HOSTS` and CORS settings
-4. Run `python manage.py collectstatic` for static files
-5. Use a production server like Gunicorn
-6. Set up a reverse proxy (Nginx)
+## ⚙️ Configuration
+
+This project is configured for **local development only**:
+
+-   **Database**: SQLite (`db.sqlite3`)
+-   **Debug Mode**: Enabled
+-   **CORS**: Allows all origins
+-   **Secret Key**: Hardcoded (change for production use)
+
+## 🗄️ Project Structure
+
+```
+Budget-Buddy-Public/
+├── backend/
+│   ├── backend/          # Django project settings
+│   ├── base/            # Main app with models, views, APIs
+│   ├── myenv/           # Virtual environment
+│   ├── manage.py
+│   └── requirements.txt
+├── front/
+│   ├── src/
+│   │   ├── Components/  # React components
+│   │   ├── Models/      # TypeScript models
+│   │   ├── Redux/       # State management
+│   │   ├── Services/    # API services
+│   │   └── Utils/       # Utilities and config
+│   └── package.json
+└── README.md
+```
+
+## ⚠️ Important Notes
+
+-   This is a **local development setup** only
+-   The `db.sqlite3` file should not be committed to version control
+-   Virtual environment (`myenv/`) is included but should typically be in `.gitignore`
+-   For production deployment, significant security changes would be required
 
 ## 📝 License
 
