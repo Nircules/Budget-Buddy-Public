@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./AddSection.css";
 import AddExpense from "../ExpensesArea/Expenses/AddExpense/AddExpense";
 import AddIncome from "../IncomesArea/AddIncome/AddIncome";

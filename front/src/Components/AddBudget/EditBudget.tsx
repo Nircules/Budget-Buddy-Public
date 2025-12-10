@@ -11,7 +11,7 @@ import ConfirmDialog from "../ConfirmDialog/ConfirmDialog";
 const EditBudget = (props: { budget: BudgetModel | null }) => {
     const context = useContext(UserContext);
     const dispatch: BudgetsDispatch = useDispatch();
-    const { register, handleSubmit, setError, formState: { errors }, setValue, watch } = useForm<BudgetModel>();
+    const { register, handleSubmit, setError, formState: { errors }, setValue } = useForm<BudgetModel>();
     const [amount, setAmount] = useState("");
     const [remainingAmount, setRemainingAmount] = useState("");
 

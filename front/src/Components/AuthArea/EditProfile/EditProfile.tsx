@@ -16,7 +16,6 @@ function EditProfile(): JSX.Element {
 	let profile = context.profile;
 	const navigate = useNavigate();
 	const [isLoading, setIsLoading] = useState<boolean>(true);
-	const [isFirst, setIsFirst] = useState<boolean>(false);
 	const [showWelcome, setShowWelcome] = useState<boolean>(false);
 
 	// Sets the input fields to the current user's profile
@@ -31,7 +30,6 @@ function EditProfile(): JSX.Element {
 			setValue("expected_income", profile.expected_income);
 		}
 		else {
-			setIsFirst(true);
 			setShowWelcome(true);
 		}
 		setIsLoading(false);
