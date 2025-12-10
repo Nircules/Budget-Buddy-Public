@@ -224,6 +224,7 @@ This project is open source and available for educational purposes.
 ## 👤 Author
 
 Created as a portfolio project to demonstrate full-stack development skills.
+Then deployed to a real live app for personal use of me and other users.
 
 ## 🤝 Contributing
 
